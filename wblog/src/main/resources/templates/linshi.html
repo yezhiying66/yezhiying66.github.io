@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head lang="en">
+  <meta charset="UTF-8">
+  <title>华立软件-图片信息平台</title>
+  <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+  <script type="text/javascript" src="../static/js/jquery-1.12.4.js"></script>
+  <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../static/js/vue.min.js"></script>
+  <script type="text/javascript" src="../static/js/axios.min.js"></script>
+
+  <style>
+    *{margin: 0;padding: 0;}
+    #page-break{margin-top: 20px;margin-left: 20px;}
+    #page-break li{list-style: none;}
+    #page-break a{border: 1px solid #ddd; text-decoration: none;float: left;padding: 6px 12px;color: #337ab7;cursor: pointer}
+    #page-break a:hover{background-color: #eee;}
+    #page-break a .banclick{cursor: not-allowed;}
+    #page-break .active a{color: #fff;cursor: default;background-color: #337ab7;border-color: #337ab7;}
+    #page-break i{font-style: normal;color: #d44950;margin: 0px 4px;font-size: 12px;}
+    #page-break .jumpbox .jumppage {border: 1px solid #ddd; margin-left: 40px; height: 33px; width: 40px; float: left;}
+    #page-break .jumpbox .jumpbtn {cursor: pointer; margin-left: 10px;}
+    #page-break .jumpbox .jumpbtn:active {color: #337ab7;}
+    a1{
+      float: left;padding: 6px 12px;color: #337ab7;
+    }
+  </style>
+</head>
+<body>
+<div class="container" id="app">
+  <table class="table table-hover">
+    <caption>
+      <button class="btn btn-default" @click="open()">点击上传</button>
+    </caption>
+    <thead>
+    <tr>
+      <th>图片</th>
+      <th>标题</th>
+      <th>地址</th>
+      <th>时间</th>
+      <th>序号</th>
+      <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr v-for="info in infos">
+      <td><img style="width:300px;height: 150px;" class="img-thumbnail" :src="root+'show/'+info.no"></td>
+      <td>{{info.title}}</td>
+      <td>{{info.addr}}</td>
+      <td>{{info.now}}</td>
+      <td>{{info.no}}</td>
+      <td><button @click="dele(info)" style="color: #b92c28">删除</button></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div id="page-break">
+    <ul>
+      <li >
+        <a class="banclick" @click="last1()">上一页</a>
+      </li>
+      <li>
+        <a class="banclick" @click="next1()">下一页</a>
+      </li>
+      <li><a>共<i>{{num}}</i>页</a></li>
+
+      <div class="jumpbox">
+        <a1>当前为第{{now}}页</a1>
+        <input id="number" type="number" class="jumppage" v-bind:value="now"/>
+        <a class="jumpbtn" v-on:click="pageSkip()">跳转</a>
+      </div>
+    </ul>
+  </div>
+<!--  <div>-->
+<!--    <div class="col-sm-3" style="text-align:center">-->
+<!--      <button class="btn" @click="last1()">上一页</button>-->
+<!--    </div>-->
+<!--    <div class="col-sm-6" style="display: flex;justify-content: flex-start;text-align:center">-->
+<!--        <p>当前第</p>-->
+<!--        <input type="text" v-model:value="now" style="width: 30px"/> &lt;!&ndash;输入即改变value值&ndash;&gt;-->
+<!--        &lt;!&ndash;      <p>{{ num }}</p> &lt;!&ndash;用于显示当前value值&ndash;&gt;&ndash;&gt;-->
+<!--        <p>页</p>-->
+<!--        <button @click="Jump()">跳转</button>-->
+<!--      <div>-->
+<!--        共{{num}}页-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="col-sm-3" style="text-align:center">-->
+<!--      <button class="btn" @click="next1()">下一页</button>-->
+<!--    </div>-->
+<!--  </div>-->
+  <div id="mymodal" class="modal" data-backdrop="static">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" @click="close()">×</button>
+          <h4>图片上传</h4>
+        </div>
+        <div class="modal-body">
+          <form class="form-horizontal" @submit.prevent="upload()">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">图片：</label>
+              <div class="col-sm-6">
+                <img id="picture" src="../images/nophoto.jpeg" class="img-thumbnail">
+                <input id="photo" type="file" required="required" class="form-control" accept="image/png,image/jpg,image/jpeg,image/bmp,image/gif" @change="look()">
+              </div>
+              <div class="col-sm-4 help-block">图片不能为空</div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">标题：</label>
+              <div class="col-sm-6">
+                <input id="title" type="text" required="required" class="form-control" placeholder="请输入图片标题" maxlength="20">
+              </div>
+              <div class="col-sm-4 help-block">标题不能为空</div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-10 col-sm-offset-2">
+                <input type="submit" class="btn btn-default" value="确定">
+                <input type="reset" class="btn btn-default" value="取消">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  new Vue({
+    el:'#app',
+    data:{
+      last:0,next:4,num:1,now:1,page:5,
+      infos:{},infos1:{},
+      // root:'http://192.168.32.111:8080/'
+      root:'http://127.0.0.1:80/'
+    },
+    mounted:function(){
+      //生命周期 当页面数据渲染完成之后触发
+      this.list();
+    },
+    methods:{
+      list:function(){
+        //异步请求将数据获取并保存到infos
+        var url = this.root+"list/"+this.last+"/"+this.next;
+        var self = this;
+        axios.get(this.root+"list/0/-1").then(function(res){
+          self.infos1 = res.data;
+          //向上取整
+          self.num = Math.ceil(res.data.length/5);
+        });
+        axios.get(url).then(function(res){
+          self.infos = res.data;
+        });
+      },
+      //跳转指定页码
+      pageSkip:function (){
+        var number = $('#number').val()
+        if (number>=1&&number<=this.num){
+          this.now = number;
+          // console.log(number)
+          this.last=number*this.page-this.page;
+          this.next=number*this.page-1;
+          this.list();
+        }else {
+          alert("您输入的页码数格式错误或不存在该页！")
+          return;
+        }
+      },
+      // 删除
+      dele:function (info){
+        console.log(info.no);
+        var url = this.root+"delel";
+        var self = this;
+        var fd = new FormData();
+        fd.append("title",info.title);
+        fd.append("addr",info.addr);
+        fd.append("now",info.now);
+        fd.append("no",info.no);
+        //异步请求
+        axios.post(url,fd).then(function(res){
+          alert(res.data.message);
+          if(res.data.code==200){
+            //操作正常 同步刷新
+            self.list();
+          }
+        });
+      },
+      open:function(){
+        $('#mymodal').modal('show');
+      },
+      close:function(){
+        //清除数据
+        $('#picture').attr("src","../images/nophoto.jpeg");
+        $('#photo').val('');
+        $('#title').val('');
+        $('#mymodal').modal('hide');
+      },
+      look:function(){
+        var files = $('#photo')[0].files;
+        if(files.length>0){
+          $('#picture').attr("src",window.URL.createObjectURL(files[0]));
+        }
+      },
+      upload:function(){
+        var file = $('#photo')[0].files[0];
+        //获取文件字节大小 单位:字节
+        if(file.size>10485760){
+          alert('上传文件上限为10MB');
+        }else{
+          var url = this.root+"upload";
+          var fd = new FormData();
+          fd.append("photo",file);
+          fd.append("title",$('#title').val());
+          var self = this;
+          //异步请求
+          axios.post(url,fd).then(function(res){
+            //显示结果
+            alert(res.data.message);
+            if(res.data.code==200){
+              //操作正常 同步刷新
+              self.list();
+              //模态框关闭
+              self.close();
+            }
+          });
+        }
+      },
+      // 向下翻页
+      next1:function(){
+        if (this.infos1[this.next+1]==null){
+          alert("当前页为最后一页")
+          return;
+        }
+        var self = this;
+        this.last=this.next+1;
+        this.next=this.next+this.page;
+        this.now++;
+        self.list();
+      },
+      //向上翻页
+      last1:function(){
+        if(this.last!==0){
+          var self = this;
+          this.last=this.last-this.page;
+          this.next=this.next-this.page;
+          this.now--;
+        }else {
+          alert("当前页为首页")
+          return;
+        }
+        self.list();
+      }
+    }
+  })
+</script>
+
+</body></html>

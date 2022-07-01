@@ -1,0 +1,444 @@
+2020-03-13 14:35:10.652  INFO 5492 --- [restartedMain] com.wb.WblogApplication                  : Starting WblogApplication on WangBo-007SS with PID 5492 (F:\IDEA\workspace\wblog\target\classes started by Administrator in F:\IDEA\workspace\wblog)
+2020-03-13 14:35:10.659 DEBUG 5492 --- [restartedMain] com.wb.WblogApplication                  : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-03-13 14:35:10.659  INFO 5492 --- [restartedMain] com.wb.WblogApplication                  : The following profiles are active: dev
+2020-03-13 14:35:10.753  INFO 5492 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in F:\Maven\mavenrep\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/F:/Maven/mavenrep/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/F:/Maven/mavenrep/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/F:/Maven/mavenrep/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/F:/Maven/mavenrep/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/F:/Maven/mavenrep/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/F:/Maven/mavenrep/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-03-13 14:35:10.754  INFO 5492 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-13 14:35:10.754  INFO 5492 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-13 14:35:12.604  INFO 5492 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-03-13 14:35:12.812  INFO 5492 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 186ms. Found 5 JPA repository interfaces.
+2020-03-13 14:35:13.363  INFO 5492 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-13 14:35:14.186  INFO 5492 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-13 14:35:14.196  INFO 5492 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-13 14:35:14.196  INFO 5492 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-03-13 14:35:14.377  INFO 5492 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-13 14:35:14.377  INFO 5492 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3623 ms
+2020-03-13 14:35:14.816  INFO 5492 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-03-13 14:35:14.996  INFO 5492 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-03-13 14:35:15.455  INFO 5492 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-13 14:35:15.603  INFO 5492 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-03-13 14:35:16.716 ERROR 5492 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1127)
+	at com.mysql.jdbc.MysqlIO.readPacket(MysqlIO.java:674)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1086)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2506)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2539)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2321)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:354)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:554)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:175)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:118)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1202)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1233)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1855)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1792)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.wb.WblogApplication.main(WblogApplication.java:12)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:3161)
+	at com.mysql.jdbc.MysqlIO.readPacket(MysqlIO.java:598)
+	... 64 common frames omitted
+
+2020-03-13 14:35:16.718  WARN 5492 --- [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2020-03-13 14:35:16.720  WARN 5492 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+2020-03-13 14:35:16.725  INFO 5492 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-03-13 14:35:16.736  INFO 5492 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-03-13 14:35:16.778 ERROR 5492 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.wb.WblogApplication.main(WblogApplication.java:12)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:275)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:175)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:118)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1202)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1233)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1855)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1792)
+	... 21 common frames omitted
+Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:100)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:54)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:137)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	... 38 common frames omitted
+
+2020-03-13 14:36:22.334  INFO 12760 --- [restartedMain] com.wb.WblogApplication                  : Starting WblogApplication on WangBo-007SS with PID 12760 (F:\IDEA\workspace\wblog\target\classes started by Administrator in F:\IDEA\workspace\wblog)
+2020-03-13 14:36:22.338 DEBUG 12760 --- [restartedMain] com.wb.WblogApplication                  : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-03-13 14:36:22.338  INFO 12760 --- [restartedMain] com.wb.WblogApplication                  : The following profiles are active: dev
+2020-03-13 14:36:22.482  INFO 12760 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in F:\Maven\mavenrep\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/F:/Maven/mavenrep/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/F:/Maven/mavenrep/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/F:/Maven/mavenrep/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/F:/Maven/mavenrep/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/F:/Maven/mavenrep/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/F:/Maven/mavenrep/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-03-13 14:36:22.484  INFO 12760 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-13 14:36:22.484  INFO 12760 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-13 14:36:23.507  INFO 12760 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-03-13 14:36:23.612  INFO 12760 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 92ms. Found 5 JPA repository interfaces.
+2020-03-13 14:36:23.930  INFO 12760 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-13 14:36:24.370  INFO 12760 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-13 14:36:24.378  INFO 12760 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-13 14:36:24.378  INFO 12760 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-03-13 14:36:24.481  INFO 12760 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-13 14:36:24.481  INFO 12760 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1996 ms
+2020-03-13 14:36:24.734  INFO 12760 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-03-13 14:36:24.784  INFO 12760 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-03-13 14:36:24.874  INFO 12760 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-13 14:36:24.954  INFO 12760 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-03-13 14:36:26.557  INFO 12760 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-03-13 14:36:26.637  INFO 12760 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-03-13 14:36:35.250  INFO 12760 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-13 14:36:35.284  INFO 12760 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-03-13 14:36:35.383  INFO 12760 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-03-13 14:36:36.616  WARN 12760 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-03-13 14:36:36.906  INFO 12760 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-13 14:36:37.038  INFO 12760 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-13 14:36:37.802  INFO 12760 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-13 14:36:37.804  INFO 12760 --- [restartedMain] com.wb.WblogApplication                  : Started WblogApplication in 16.364 seconds (JVM running for 18.075)
+2020-03-13 14:36:56.710  INFO 12760 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-13 14:36:56.710  INFO 12760 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-13 14:36:56.722  INFO 12760 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2020-03-13 14:36:56.799  INFO 12760 --- [http-nio-8080-exec-1] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]}
+2020-03-13 14:36:58.726  WARN 12760 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-03-13 14:36:58.947  WARN 12760 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-03-13 14:36:59.364  INFO 12760 --- [http-nio-8080-exec-1] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 14:36:59.364  INFO 12760 --- [http-nio-8080-exec-1] com.wb.aspect.LogAspect                  : Result : index
+2020-03-13 14:37:03.268  INFO 12760 --- [http-nio-8080-exec-4] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.newblogs', args=[{}]}
+2020-03-13 14:37:04.067  INFO 12760 --- [http-nio-8080-exec-4] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 14:37:04.067  INFO 12760 --- [http-nio-8080-exec-4] com.wb.aspect.LogAspect                  : Result : commons/fragment :: newblogList
+2020-03-13 15:51:55.960  INFO 12760 --- [http-nio-8080-exec-3] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]}
+2020-03-13 15:51:58.448  INFO 12760 --- [http-nio-8080-exec-3] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 15:51:58.448  INFO 12760 --- [http-nio-8080-exec-3] com.wb.aspect.LogAspect                  : Result : index
+2020-03-13 15:52:02.326  INFO 12760 --- [http-nio-8080-exec-5] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.newblogs', args=[{}]}
+2020-03-13 15:52:03.139  INFO 12760 --- [http-nio-8080-exec-5] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 15:52:03.139  INFO 12760 --- [http-nio-8080-exec-5] com.wb.aspect.LogAspect                  : Result : commons/fragment :: newblogList
+2020-03-13 17:13:43.726  INFO 12760 --- [http-nio-8080-exec-4] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]}
+2020-03-13 17:13:47.838  INFO 12760 --- [http-nio-8080-exec-4] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 17:13:47.838  INFO 12760 --- [http-nio-8080-exec-4] com.wb.aspect.LogAspect                  : Result : index
+2020-03-13 17:13:51.904  INFO 12760 --- [http-nio-8080-exec-1] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.newblogs', args=[{}]}
+2020-03-13 17:13:52.752  INFO 12760 --- [http-nio-8080-exec-1] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 17:13:52.753  INFO 12760 --- [http-nio-8080-exec-1] com.wb.aspect.LogAspect                  : Result : commons/fragment :: newblogList
+2020-03-13 17:14:53.618  INFO 12760 --- [http-nio-8080-exec-6] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]}
+2020-03-13 17:14:55.800  INFO 12760 --- [http-nio-8080-exec-6] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 17:14:55.800  INFO 12760 --- [http-nio-8080-exec-6] com.wb.aspect.LogAspect                  : Result : index
+2020-03-13 17:14:59.037  INFO 12760 --- [http-nio-8080-exec-2] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.newblogs', args=[{}]}
+2020-03-13 17:14:59.883  INFO 12760 --- [http-nio-8080-exec-2] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 17:14:59.884  INFO 12760 --- [http-nio-8080-exec-2] com.wb.aspect.LogAspect                  : Result : commons/fragment :: newblogList
+2020-03-13 17:15:52.306  INFO 12760 --- [http-nio-8080-exec-9] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]}
+2020-03-13 17:15:54.326  INFO 12760 --- [http-nio-8080-exec-9] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 17:15:54.327  INFO 12760 --- [http-nio-8080-exec-9] com.wb.aspect.LogAspect                  : Result : index
+2020-03-13 17:15:57.822  INFO 12760 --- [http-nio-8080-exec-3] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.newblogs', args=[{}]}
+2020-03-13 17:15:58.648  INFO 12760 --- [http-nio-8080-exec-3] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 17:15:58.648  INFO 12760 --- [http-nio-8080-exec-3] com.wb.aspect.LogAspect                  : Result : commons/fragment :: newblogList
+2020-03-13 17:16:33.743  INFO 12760 --- [http-nio-8080-exec-8] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]}
+2020-03-13 17:16:35.746  INFO 12760 --- [http-nio-8080-exec-8] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 17:16:35.746  INFO 12760 --- [http-nio-8080-exec-8] com.wb.aspect.LogAspect                  : Result : index
+2020-03-13 17:16:39.349  INFO 12760 --- [http-nio-8080-exec-10] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.newblogs', args=[{}]}
+2020-03-13 17:16:40.593  INFO 12760 --- [http-nio-8080-exec-10] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 17:16:40.593  INFO 12760 --- [http-nio-8080-exec-10] com.wb.aspect.LogAspect                  : Result : commons/fragment :: newblogList
+2020-03-13 17:23:27.011  INFO 12760 --- [http-nio-8080-exec-6] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]}
+2020-03-13 17:23:29.442  INFO 12760 --- [http-nio-8080-exec-6] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 17:23:29.442  INFO 12760 --- [http-nio-8080-exec-6] com.wb.aspect.LogAspect                  : Result : index
+2020-03-13 17:23:33.276  INFO 12760 --- [http-nio-8080-exec-2] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.newblogs', args=[{}]}
+2020-03-13 17:23:34.119  INFO 12760 --- [http-nio-8080-exec-2] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 17:23:34.120  INFO 12760 --- [http-nio-8080-exec-2] com.wb.aspect.LogAspect                  : Result : commons/fragment :: newblogList
+2020-03-13 17:27:21.687  INFO 12760 --- [http-nio-8080-exec-8] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]}
+2020-03-13 17:27:23.939  INFO 12760 --- [http-nio-8080-exec-8] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 17:27:23.940  INFO 12760 --- [http-nio-8080-exec-8] com.wb.aspect.LogAspect                  : Result : index
+2020-03-13 17:27:28.246  INFO 12760 --- [http-nio-8080-exec-1] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.newblogs', args=[{}]}
+2020-03-13 17:27:29.010  INFO 12760 --- [http-nio-8080-exec-1] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 17:27:29.010  INFO 12760 --- [http-nio-8080-exec-1] com.wb.aspect.LogAspect                  : Result : commons/fragment :: newblogList
+2020-03-13 17:31:57.752  INFO 12760 --- [Thread-31] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-13 17:31:57.762  INFO 12760 --- [Thread-31] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-03-13 17:31:57.762  INFO 12760 --- [Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-03-13 17:31:57.782  INFO 12760 --- [Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-03-13 17:31:58.743  INFO 12760 --- [restartedMain] com.wb.WblogApplication                  : Starting WblogApplication on WangBo-007SS with PID 12760 (F:\IDEA\workspace\wblog\target\classes started by Administrator in F:\IDEA\workspace\wblog)
+2020-03-13 17:31:58.743 DEBUG 12760 --- [restartedMain] com.wb.WblogApplication                  : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-03-13 17:31:58.743  INFO 12760 --- [restartedMain] com.wb.WblogApplication                  : The following profiles are active: dev
+2020-03-13 17:31:58.983  INFO 12760 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-03-13 17:31:59.043  INFO 12760 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57ms. Found 5 JPA repository interfaces.
+2020-03-13 17:31:59.226  INFO 12760 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-13 17:31:59.514  INFO 12760 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-13 17:31:59.515  INFO 12760 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-13 17:31:59.515  INFO 12760 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-03-13 17:31:59.591  INFO 12760 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-13 17:31:59.595  INFO 12760 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 842 ms
+2020-03-13 17:31:59.751  INFO 12760 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-03-13 17:31:59.757  INFO 12760 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2020-03-13 17:32:01.167  INFO 12760 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2020-03-13 17:32:01.168  INFO 12760 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-03-13 17:32:07.995  INFO 12760 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-13 17:32:07.996  INFO 12760 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-03-13 17:32:08.076  INFO 12760 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-03-13 17:32:08.518  WARN 12760 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-03-13 17:32:08.632  INFO 12760 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-13 17:32:08.672  INFO 12760 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-13 17:32:08.870  INFO 12760 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-13 17:32:08.871  INFO 12760 --- [restartedMain] com.wb.WblogApplication                  : Started WblogApplication in 10.175 seconds (JVM running for 10549.142)
+2020-03-13 17:32:08.873  INFO 12760 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-03-13 17:32:08.946  INFO 12760 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-13 17:32:08.947  INFO 12760 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-13 17:32:08.955  INFO 12760 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2020-03-13 17:32:08.959  INFO 12760 --- [http-nio-8080-exec-1] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/', ip='127.0.0.1', classMethod='com.wb.controller.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]}
+2020-03-13 17:32:12.312  WARN 12760 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-03-13 17:32:12.579  WARN 12760 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-03-13 17:32:13.117  INFO 12760 --- [http-nio-8080-exec-1] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 17:32:13.118  INFO 12760 --- [http-nio-8080-exec-1] com.wb.aspect.LogAspect                  : Result : index
+2020-03-13 17:32:18.056  INFO 12760 --- [http-nio-8080-exec-3] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.newblogs', args=[{}]}
+2020-03-13 17:32:18.947  INFO 12760 --- [http-nio-8080-exec-3] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 17:32:18.948  INFO 12760 --- [http-nio-8080-exec-3] com.wb.aspect.LogAspect                  : Result : commons/fragment :: newblogList
+2020-03-13 17:40:40.072  INFO 12760 --- [http-nio-8080-exec-4] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/admin/addBlogs', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.ExceptionController.exceptionHandler', args=[org.apache.catalina.connector.RequestFacade@26629290, org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'blog' on field 'published': rejected value []; codes [typeMismatch.blog.published,typeMismatch.published,typeMismatch.boolean,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [blog.published,published]; arguments []; default message [published]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'boolean' for property 'published'; nested exception is java.lang.IllegalArgumentException: Invalid boolean value []]]}
+2020-03-13 17:40:40.074 ERROR 12760 --- [http-nio-8080-exec-4] com.wb.controller.ExceptionController    : Request URL : org.apache.catalina.connector.RequestFacade@26629290, Exception : org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'blog' on field 'published': rejected value []; codes [typeMismatch.blog.published,typeMismatch.published,typeMismatch.boolean,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [blog.published,published]; arguments []; default message [published]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'boolean' for property 'published'; nested exception is java.lang.IllegalArgumentException: Invalid boolean value []]
+2020-03-13 17:40:40.074  INFO 12760 --- [http-nio-8080-exec-4] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 17:40:40.075  INFO 12760 --- [http-nio-8080-exec-4] com.wb.aspect.LogAspect                  : Result : ModelAndView [view="error/error"; model={url=http://localhost:8080/admin/addBlogs, exception=org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'blog' on field 'published': rejected value []; codes [typeMismatch.blog.published,typeMismatch.published,typeMismatch.boolean,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [blog.published,published]; arguments []; default message [published]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'boolean' for property 'published'; nested exception is java.lang.IllegalArgumentException: Invalid boolean value []]}]
+2020-03-13 17:40:40.075  WARN 12760 --- [http-nio-8080-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'blog' on field 'published': rejected value []; codes [typeMismatch.blog.published,typeMismatch.published,typeMismatch.boolean,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [blog.published,published]; arguments []; default message [published]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'boolean' for property 'published'; nested exception is java.lang.IllegalArgumentException: Invalid boolean value []]]
+2020-03-13 17:43:16.251  INFO 12760 --- [http-nio-8080-exec-8] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/admin/addBlogs', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.ExceptionController.exceptionHandler', args=[org.apache.catalina.connector.RequestFacade@3cd054d4, org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'blog' on field 'published': rejected value []; codes [typeMismatch.blog.published,typeMismatch.published,typeMismatch.boolean,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [blog.published,published]; arguments []; default message [published]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'boolean' for property 'published'; nested exception is java.lang.IllegalArgumentException: Invalid boolean value []]]}
+2020-03-13 17:43:16.252 ERROR 12760 --- [http-nio-8080-exec-8] com.wb.controller.ExceptionController    : Request URL : org.apache.catalina.connector.RequestFacade@3cd054d4, Exception : org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'blog' on field 'published': rejected value []; codes [typeMismatch.blog.published,typeMismatch.published,typeMismatch.boolean,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [blog.published,published]; arguments []; default message [published]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'boolean' for property 'published'; nested exception is java.lang.IllegalArgumentException: Invalid boolean value []]
+2020-03-13 17:43:16.253  INFO 12760 --- [http-nio-8080-exec-8] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 17:43:16.253  INFO 12760 --- [http-nio-8080-exec-8] com.wb.aspect.LogAspect                  : Result : ModelAndView [view="error/error"; model={url=http://localhost:8080/admin/addBlogs, exception=org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'blog' on field 'published': rejected value []; codes [typeMismatch.blog.published,typeMismatch.published,typeMismatch.boolean,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [blog.published,published]; arguments []; default message [published]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'boolean' for property 'published'; nested exception is java.lang.IllegalArgumentException: Invalid boolean value []]}]
+2020-03-13 17:43:16.253  WARN 12760 --- [http-nio-8080-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'blog' on field 'published': rejected value []; codes [typeMismatch.blog.published,typeMismatch.published,typeMismatch.boolean,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [blog.published,published]; arguments []; default message [published]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'boolean' for property 'published'; nested exception is java.lang.IllegalArgumentException: Invalid boolean value []]]
+2020-03-13 17:43:32.970  INFO 12760 --- [http-nio-8080-exec-10] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/admin/addBlogs', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.ExceptionController.exceptionHandler', args=[org.apache.catalina.connector.RequestFacade@3cd054d4, org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'blog' on field 'published': rejected value []; codes [typeMismatch.blog.published,typeMismatch.published,typeMismatch.boolean,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [blog.published,published]; arguments []; default message [published]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'boolean' for property 'published'; nested exception is java.lang.IllegalArgumentException: Invalid boolean value []]]}
+2020-03-13 17:43:32.971 ERROR 12760 --- [http-nio-8080-exec-10] com.wb.controller.ExceptionController    : Request URL : org.apache.catalina.connector.RequestFacade@3cd054d4, Exception : org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'blog' on field 'published': rejected value []; codes [typeMismatch.blog.published,typeMismatch.published,typeMismatch.boolean,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [blog.published,published]; arguments []; default message [published]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'boolean' for property 'published'; nested exception is java.lang.IllegalArgumentException: Invalid boolean value []]
+2020-03-13 17:43:32.971  INFO 12760 --- [http-nio-8080-exec-10] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 17:43:32.972  INFO 12760 --- [http-nio-8080-exec-10] com.wb.aspect.LogAspect                  : Result : ModelAndView [view="error/error"; model={url=http://localhost:8080/admin/addBlogs, exception=org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'blog' on field 'published': rejected value []; codes [typeMismatch.blog.published,typeMismatch.published,typeMismatch.boolean,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [blog.published,published]; arguments []; default message [published]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'boolean' for property 'published'; nested exception is java.lang.IllegalArgumentException: Invalid boolean value []]}]
+2020-03-13 17:43:32.973  WARN 12760 --- [http-nio-8080-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'blog' on field 'published': rejected value []; codes [typeMismatch.blog.published,typeMismatch.published,typeMismatch.boolean,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [blog.published,published]; arguments []; default message [published]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'boolean' for property 'published'; nested exception is java.lang.IllegalArgumentException: Invalid boolean value []]]
+2020-03-13 17:44:09.717  INFO 12760 --- [http-nio-8080-exec-9] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/admin/addBlogs', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.ExceptionController.exceptionHandler', args=[org.apache.catalina.connector.RequestFacade@26629290, org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'blog' on field 'published': rejected value []; codes [typeMismatch.blog.published,typeMismatch.published,typeMismatch.boolean,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [blog.published,published]; arguments []; default message [published]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'boolean' for property 'published'; nested exception is java.lang.IllegalArgumentException: Invalid boolean value []]]}
+2020-03-13 17:44:09.717 ERROR 12760 --- [http-nio-8080-exec-9] com.wb.controller.ExceptionController    : Request URL : org.apache.catalina.connector.RequestFacade@26629290, Exception : org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'blog' on field 'published': rejected value []; codes [typeMismatch.blog.published,typeMismatch.published,typeMismatch.boolean,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [blog.published,published]; arguments []; default message [published]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'boolean' for property 'published'; nested exception is java.lang.IllegalArgumentException: Invalid boolean value []]
+2020-03-13 17:44:09.717  INFO 12760 --- [http-nio-8080-exec-9] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 17:44:09.717  INFO 12760 --- [http-nio-8080-exec-9] com.wb.aspect.LogAspect                  : Result : ModelAndView [view="error/error"; model={url=http://localhost:8080/admin/addBlogs, exception=org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'blog' on field 'published': rejected value []; codes [typeMismatch.blog.published,typeMismatch.published,typeMismatch.boolean,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [blog.published,published]; arguments []; default message [published]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'boolean' for property 'published'; nested exception is java.lang.IllegalArgumentException: Invalid boolean value []]}]
+2020-03-13 17:44:09.717  WARN 12760 --- [http-nio-8080-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'blog' on field 'published': rejected value []; codes [typeMismatch.blog.published,typeMismatch.published,typeMismatch.boolean,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [blog.published,published]; arguments []; default message [published]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'boolean' for property 'published'; nested exception is java.lang.IllegalArgumentException: Invalid boolean value []]]
+2020-03-13 17:47:15.407  INFO 12760 --- [http-nio-8080-exec-7] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/admin/addBlogs', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.ExceptionController.exceptionHandler', args=[org.apache.catalina.connector.RequestFacade@3cd054d4, org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'blog' on field 'published': rejected value []; codes [typeMismatch.blog.published,typeMismatch.published,typeMismatch.boolean,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [blog.published,published]; arguments []; default message [published]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'boolean' for property 'published'; nested exception is java.lang.IllegalArgumentException: Invalid boolean value []]]}
+2020-03-13 17:47:15.407 ERROR 12760 --- [http-nio-8080-exec-7] com.wb.controller.ExceptionController    : Request URL : org.apache.catalina.connector.RequestFacade@3cd054d4, Exception : org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'blog' on field 'published': rejected value []; codes [typeMismatch.blog.published,typeMismatch.published,typeMismatch.boolean,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [blog.published,published]; arguments []; default message [published]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'boolean' for property 'published'; nested exception is java.lang.IllegalArgumentException: Invalid boolean value []]
+2020-03-13 17:47:15.407  INFO 12760 --- [http-nio-8080-exec-7] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 17:47:15.408  INFO 12760 --- [http-nio-8080-exec-7] com.wb.aspect.LogAspect                  : Result : ModelAndView [view="error/error"; model={url=http://localhost:8080/admin/addBlogs, exception=org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'blog' on field 'published': rejected value []; codes [typeMismatch.blog.published,typeMismatch.published,typeMismatch.boolean,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [blog.published,published]; arguments []; default message [published]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'boolean' for property 'published'; nested exception is java.lang.IllegalArgumentException: Invalid boolean value []]}]
+2020-03-13 17:47:15.408  WARN 12760 --- [http-nio-8080-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'blog' on field 'published': rejected value []; codes [typeMismatch.blog.published,typeMismatch.published,typeMismatch.boolean,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [blog.published,published]; arguments []; default message [published]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'boolean' for property 'published'; nested exception is java.lang.IllegalArgumentException: Invalid boolean value []]]
+2020-03-13 17:47:48.721  INFO 12760 --- [http-nio-8080-exec-3] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]}
+2020-03-13 17:47:50.899  INFO 12760 --- [http-nio-8080-exec-3] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 17:47:50.900  INFO 12760 --- [http-nio-8080-exec-3] com.wb.aspect.LogAspect                  : Result : index
+2020-03-13 17:47:54.549  INFO 12760 --- [http-nio-8080-exec-5] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.newblogs', args=[{}]}
+2020-03-13 17:47:55.344  INFO 12760 --- [http-nio-8080-exec-5] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 17:47:55.344  INFO 12760 --- [http-nio-8080-exec-5] com.wb.aspect.LogAspect                  : Result : commons/fragment :: newblogList
+2020-03-13 17:48:02.302  INFO 12760 --- [http-nio-8080-exec-6] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.TypeShowController.types', args=[Page request [number: 0, size 5, sort: updateTime: DESC], -1, {}]}
+2020-03-13 17:48:03.384  INFO 12760 --- [http-nio-8080-exec-6] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 17:48:03.385  INFO 12760 --- [http-nio-8080-exec-6] com.wb.aspect.LogAspect                  : Result : types
+2020-03-13 17:48:05.513  INFO 12760 --- [http-nio-8080-exec-1] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.newblogs', args=[{}]}
+2020-03-13 17:48:06.308  INFO 12760 --- [http-nio-8080-exec-1] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 17:48:06.309  INFO 12760 --- [http-nio-8080-exec-1] com.wb.aspect.LogAspect                  : Result : commons/fragment :: newblogList
+2020-03-13 17:48:11.837  INFO 12760 --- [http-nio-8080-exec-2] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.TagShowController.tags', args=[Page request [number: 0, size 5, sort: updateTime: DESC], -1, {}]}
+2020-03-13 17:48:13.505  INFO 12760 --- [http-nio-8080-exec-2] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 17:48:13.506  INFO 12760 --- [http-nio-8080-exec-2] com.wb.aspect.LogAspect                  : Result : tags
+2020-03-13 17:48:17.942  INFO 12760 --- [http-nio-8080-exec-4] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.newblogs', args=[{}]}
+2020-03-13 17:48:18.713  INFO 12760 --- [http-nio-8080-exec-4] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 17:48:18.713  INFO 12760 --- [http-nio-8080-exec-4] com.wb.aspect.LogAspect                  : Result : commons/fragment :: newblogList
+2020-03-13 17:48:25.539  INFO 12760 --- [http-nio-8080-exec-3] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/search', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.search', args=[Page request [number: 0, size 5, sort: updateTime: DESC], a, {}]}
+2020-03-13 17:48:26.761  INFO 12760 --- [http-nio-8080-exec-3] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 17:48:26.762  INFO 12760 --- [http-nio-8080-exec-3] com.wb.aspect.LogAspect                  : Result : search
+2020-03-13 17:48:27.043  INFO 12760 --- [http-nio-8080-exec-3] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.newblogs', args=[{}]}
+2020-03-13 17:48:27.844  INFO 12760 --- [http-nio-8080-exec-3] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 17:48:27.845  INFO 12760 --- [http-nio-8080-exec-3] com.wb.aspect.LogAspect                  : Result : commons/fragment :: newblogList
+2020-03-13 17:48:42.831  INFO 12760 --- [http-nio-8080-exec-8] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]}
+2020-03-13 17:48:44.806  INFO 12760 --- [http-nio-8080-exec-8] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 17:48:44.807  INFO 12760 --- [http-nio-8080-exec-8] com.wb.aspect.LogAspect                  : Result : index
+2020-03-13 17:48:47.953  INFO 12760 --- [http-nio-8080-exec-5] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.newblogs', args=[{}]}
+2020-03-13 17:48:51.507  INFO 12760 --- [http-nio-8080-exec-5] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 17:48:51.507  INFO 12760 --- [http-nio-8080-exec-5] com.wb.aspect.LogAspect                  : Result : commons/fragment :: newblogList
+2020-03-13 18:33:13.713  INFO 12760 --- [http-nio-8080-exec-7] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/about', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.AboutShowController.about', args=[]}
+2020-03-13 18:33:13.727  INFO 12760 --- [http-nio-8080-exec-7] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 18:33:13.728  INFO 12760 --- [http-nio-8080-exec-7] com.wb.aspect.LogAspect                  : Result : about
+2020-03-13 18:33:14.499  INFO 12760 --- [http-nio-8080-exec-7] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.newblogs', args=[{}]}
+2020-03-13 18:33:15.560  INFO 12760 --- [http-nio-8080-exec-7] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 18:33:15.560  INFO 12760 --- [http-nio-8080-exec-7] com.wb.aspect.LogAspect                  : Result : commons/fragment :: newblogList
+2020-03-13 18:38:50.059  INFO 12760 --- [http-nio-8080-exec-8] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/about', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.AboutShowController.about', args=[]}
+2020-03-13 18:38:50.059  INFO 12760 --- [http-nio-8080-exec-8] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 18:38:50.059  INFO 12760 --- [http-nio-8080-exec-8] com.wb.aspect.LogAspect                  : Result : about
+2020-03-13 18:38:50.529  INFO 12760 --- [http-nio-8080-exec-5] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.newblogs', args=[{}]}
+2020-03-13 18:38:52.089  INFO 12760 --- [http-nio-8080-exec-5] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 18:38:52.090  INFO 12760 --- [http-nio-8080-exec-5] com.wb.aspect.LogAspect                  : Result : commons/fragment :: newblogList
+2020-03-13 18:39:03.662  INFO 12760 --- [http-nio-8080-exec-7] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/about', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.AboutShowController.about', args=[]}
+2020-03-13 18:39:03.662  INFO 12760 --- [http-nio-8080-exec-7] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 18:39:03.662  INFO 12760 --- [http-nio-8080-exec-7] com.wb.aspect.LogAspect                  : Result : about
+2020-03-13 18:39:04.074  INFO 12760 --- [http-nio-8080-exec-4] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.newblogs', args=[{}]}
+2020-03-13 18:39:04.974  INFO 12760 --- [http-nio-8080-exec-4] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 18:39:04.974  INFO 12760 --- [http-nio-8080-exec-4] com.wb.aspect.LogAspect                  : Result : commons/fragment :: newblogList
+2020-03-13 18:39:31.050  INFO 12760 --- [http-nio-8080-exec-3] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/about', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.AboutShowController.about', args=[]}
+2020-03-13 18:39:31.050  INFO 12760 --- [http-nio-8080-exec-3] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 18:39:31.050  INFO 12760 --- [http-nio-8080-exec-3] com.wb.aspect.LogAspect                  : Result : about
+2020-03-13 18:39:31.866  INFO 12760 --- [http-nio-8080-exec-10] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.newblogs', args=[{}]}
+2020-03-13 18:39:32.791  INFO 12760 --- [http-nio-8080-exec-10] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 18:39:32.792  INFO 12760 --- [http-nio-8080-exec-10] com.wb.aspect.LogAspect                  : Result : commons/fragment :: newblogList
+2020-03-13 18:43:47.040  INFO 12760 --- [http-nio-8080-exec-8] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.TypeShowController.types', args=[Page request [number: 0, size 5, sort: updateTime: DESC], -1, {}]}
+2020-03-13 18:43:48.810  INFO 12760 --- [http-nio-8080-exec-8] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 18:43:48.811  INFO 12760 --- [http-nio-8080-exec-8] com.wb.aspect.LogAspect                  : Result : types
+2020-03-13 18:43:51.308  INFO 12760 --- [http-nio-8080-exec-8] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.newblogs', args=[{}]}
+2020-03-13 18:43:52.113  INFO 12760 --- [http-nio-8080-exec-8] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 18:43:52.114  INFO 12760 --- [http-nio-8080-exec-8] com.wb.aspect.LogAspect                  : Result : commons/fragment :: newblogList
+2020-03-13 19:19:17.680  INFO 12760 --- [http-nio-8080-exec-10] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/about', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.AboutShowController.about', args=[]}
+2020-03-13 19:19:17.681  INFO 12760 --- [http-nio-8080-exec-10] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 19:19:17.681  INFO 12760 --- [http-nio-8080-exec-10] com.wb.aspect.LogAspect                  : Result : about
+2020-03-13 19:19:18.013  INFO 12760 --- [http-nio-8080-exec-10] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.newblogs', args=[{}]}
+2020-03-13 19:19:19.788  INFO 12760 --- [http-nio-8080-exec-10] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 19:19:19.789  INFO 12760 --- [http-nio-8080-exec-10] com.wb.aspect.LogAspect                  : Result : commons/fragment :: newblogList
+2020-03-13 19:20:17.267  INFO 12760 --- [http-nio-8080-exec-1] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/about', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.AboutShowController.about', args=[]}
+2020-03-13 19:20:17.267  INFO 12760 --- [http-nio-8080-exec-1] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 19:20:17.267  INFO 12760 --- [http-nio-8080-exec-1] com.wb.aspect.LogAspect                  : Result : about
+2020-03-13 19:20:17.908  INFO 12760 --- [http-nio-8080-exec-4] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.newblogs', args=[{}]}
+2020-03-13 19:20:19.065  INFO 12760 --- [http-nio-8080-exec-4] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 19:20:19.065  INFO 12760 --- [http-nio-8080-exec-4] com.wb.aspect.LogAspect                  : Result : commons/fragment :: newblogList
+2020-03-13 19:26:25.000  INFO 12760 --- [http-nio-8080-exec-6] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]}
+2020-03-13 19:26:25.455  WARN 12760 --- [http-nio-8080-exec-6] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@74375550 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-03-13 19:26:25.458  WARN 12760 --- [http-nio-8080-exec-6] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@2104691a (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-03-13 19:26:25.460  WARN 12760 --- [http-nio-8080-exec-6] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@61cd8678 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-03-13 19:26:25.462  WARN 12760 --- [http-nio-8080-exec-6] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@2f9ed2c4 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-03-13 19:26:25.464  WARN 12760 --- [http-nio-8080-exec-6] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@d70bbfb (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-03-13 19:26:25.467  WARN 12760 --- [http-nio-8080-exec-6] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@fbe4ff6 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-03-13 19:26:25.469  WARN 12760 --- [http-nio-8080-exec-6] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@2cde63f (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-03-13 19:26:25.473  WARN 12760 --- [http-nio-8080-exec-6] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@5b1c1c50 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-03-13 19:26:25.475  WARN 12760 --- [http-nio-8080-exec-6] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@2e87ffc5 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-03-13 19:26:25.477  WARN 12760 --- [http-nio-8080-exec-6] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@43161834 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-03-13 19:26:55.006  WARN 12760 --- [http-nio-8080-exec-6] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 08S01
+2020-03-13 19:26:55.007 ERROR 12760 --- [http-nio-8080-exec-6] o.h.engine.jdbc.spi.SqlExceptionHelper   : HikariPool-2 - Connection is not available, request timed out after 30004ms.
+2020-03-13 19:26:55.007 ERROR 12760 --- [http-nio-8080-exec-6] o.h.engine.jdbc.spi.SqlExceptionHelper   : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2020-03-13 19:26:55.486  INFO 12760 --- [http-nio-8080-exec-6] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 19:26:55.492  INFO 12760 --- [http-nio-8080-exec-6] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.ExceptionController.exceptionHandler', args=[org.apache.catalina.connector.RequestFacade@3cd054d4, org.springframework.transaction.CannotCreateTransactionException: Could not open JPA EntityManager for transaction; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection]}
+2020-03-13 19:26:55.493 ERROR 12760 --- [http-nio-8080-exec-6] com.wb.controller.ExceptionController    : Request URL : org.apache.catalina.connector.RequestFacade@3cd054d4, Exception : Could not open JPA EntityManager for transaction; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection
+2020-03-13 19:26:55.494  INFO 12760 --- [http-nio-8080-exec-6] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 19:26:55.494  INFO 12760 --- [http-nio-8080-exec-6] com.wb.aspect.LogAspect                  : Result : ModelAndView [view="error/error"; model={url=http://localhost:8080/, exception=org.springframework.transaction.CannotCreateTransactionException: Could not open JPA EntityManager for transaction; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection}]
+2020-03-13 19:26:55.494  WARN 12760 --- [http-nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.transaction.CannotCreateTransactionException: Could not open JPA EntityManager for transaction; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection]
+2020-03-13 19:31:33.184  INFO 12760 --- [http-nio-8080-exec-4] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]}
+2020-03-13 19:31:54.919  INFO 12760 --- [http-nio-8080-exec-5] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]}
+2020-03-13 19:32:03.185  WARN 12760 --- [http-nio-8080-exec-4] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 08S01
+2020-03-13 19:32:03.187 ERROR 12760 --- [http-nio-8080-exec-4] o.h.engine.jdbc.spi.SqlExceptionHelper   : HikariPool-2 - Connection is not available, request timed out after 30000ms.
+2020-03-13 19:32:03.187 ERROR 12760 --- [http-nio-8080-exec-4] o.h.engine.jdbc.spi.SqlExceptionHelper   : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2020-03-13 19:32:03.188  INFO 12760 --- [http-nio-8080-exec-4] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 19:32:03.189  INFO 12760 --- [http-nio-8080-exec-4] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.ExceptionController.exceptionHandler', args=[org.apache.catalina.connector.RequestFacade@3cd054d4, org.springframework.transaction.CannotCreateTransactionException: Could not open JPA EntityManager for transaction; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection]}
+2020-03-13 19:32:03.190 ERROR 12760 --- [http-nio-8080-exec-4] com.wb.controller.ExceptionController    : Request URL : org.apache.catalina.connector.RequestFacade@3cd054d4, Exception : Could not open JPA EntityManager for transaction; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection
+2020-03-13 19:32:03.191  INFO 12760 --- [http-nio-8080-exec-4] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 19:32:03.192  INFO 12760 --- [http-nio-8080-exec-4] com.wb.aspect.LogAspect                  : Result : ModelAndView [view="error/error"; model={url=http://localhost:8080/, exception=org.springframework.transaction.CannotCreateTransactionException: Could not open JPA EntityManager for transaction; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection}]
+2020-03-13 19:32:03.193  WARN 12760 --- [http-nio-8080-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.transaction.CannotCreateTransactionException: Could not open JPA EntityManager for transaction; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection]
+2020-03-13 19:32:24.923  WARN 12760 --- [http-nio-8080-exec-5] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 08S01
+2020-03-13 19:32:24.923 ERROR 12760 --- [http-nio-8080-exec-5] o.h.engine.jdbc.spi.SqlExceptionHelper   : HikariPool-2 - Connection is not available, request timed out after 30001ms.
+2020-03-13 19:32:24.923 ERROR 12760 --- [http-nio-8080-exec-5] o.h.engine.jdbc.spi.SqlExceptionHelper   : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2020-03-13 19:32:24.924  INFO 12760 --- [http-nio-8080-exec-5] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 19:32:24.925  INFO 12760 --- [http-nio-8080-exec-5] com.wb.aspect.LogAspect                  : Request : RequestLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.wb.controller.ExceptionController.exceptionHandler', args=[org.apache.catalina.connector.RequestFacade@26629290, org.springframework.transaction.CannotCreateTransactionException: Could not open JPA EntityManager for transaction; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection]}
+2020-03-13 19:32:24.926 ERROR 12760 --- [http-nio-8080-exec-5] com.wb.controller.ExceptionController    : Request URL : org.apache.catalina.connector.RequestFacade@26629290, Exception : Could not open JPA EntityManager for transaction; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection
+2020-03-13 19:32:24.926  INFO 12760 --- [http-nio-8080-exec-5] com.wb.aspect.LogAspect                  : -------------doAfter--------------
+2020-03-13 19:32:24.926  INFO 12760 --- [http-nio-8080-exec-5] com.wb.aspect.LogAspect                  : Result : ModelAndView [view="error/error"; model={url=http://localhost:8080/, exception=org.springframework.transaction.CannotCreateTransactionException: Could not open JPA EntityManager for transaction; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection}]
+2020-03-13 19:32:24.927  WARN 12760 --- [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.transaction.CannotCreateTransactionException: Could not open JPA EntityManager for transaction; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection]

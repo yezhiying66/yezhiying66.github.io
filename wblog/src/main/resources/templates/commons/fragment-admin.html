@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!-- 导航 -->
+<nav class="ui inverted attached segment m-padded-tb-mini m-shadow-small" th:fragment="topbar">
+    <div class="ui m-container">
+        <div class="ui inverted secondary stackable menu">
+            <h2 class="ui teal header item">后台管理</h2>
+            <a href="#" th:href="@{/admin/blogs}" class="m-item item m-mobile-hide" th:classappend="${activeUri=='blog'}?'active'"><i class="small home icon"></i>博客</a>
+            <a href="#" th:href="@{/admin/types}" class="m-item item m-mobile-hide" th:classappend="${activeUri=='type'}?'active'"><i class="small idea icon"></i>分类</a>
+            <a href="#" th:href="@{/admin/tags}" class="m-item item m-mobile-hide" th:classappend="${activeUri=='tag'}?'active'"><i class="small tags icon"></i>标签</a>
+            <div class="right m-item m-mobile-hide menu">
+                <div class="ui dropdown item">
+                    <img class="ui avatar image" src="https://unsplash.it/100/100?image=1005" th:src="@{${session.user.avatar}}">
+                    <span th:text="${session.user.nickname}">张三丰</span>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a href="#" th:href="@{/admin/logout}" class="item">注销</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" id="menu_toggle" class="ui black icon button m-right-top m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+
+
+<!-- 底部 -->
+<footer class="ui inverted vertical segment m-padded-tb-big" th:fragment="footerbar">
+    <div class="ui center aligned container">
+        <div class="ui inverted divided stackable grid">
+
+            <div class="three wide column">
+                <div class="ui inverted link list">
+                    <div class="item">
+                        <img src="../../static/images/QQ.jpg" th:src="@{/images/QQ.jpg}" class="ui rounded image" alt="" style="width: 110px">
+                    </div>
+                </div>
+            </div>
+
+            <div class="three wide column m-text-thin m-text-spaced m-opacity-mini">
+                <h4 class="ui inverted header m-text-thin m-text-spaced">冬夜读书示子聿-陆游</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">古人学问无遗力，</a>
+                    <a href="#" class="item">少壮工夫老始成。</a>
+                    <a href="#" class="item">纸上得来终觉浅，</a>
+                    <a href="#" class="item">绝知此事要躬行。</a>
+                </div>
+            </div>
+
+            <div class="four wide column m-text-thin m-text-spaced m-opacity-mini">
+                <h4 class="ui inverted header m-text-thin m-text-spaced">联系我</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">Email: 1831008631@qq.com</a>
+                    <a href="#" class="item">QQ: 1831008631</a>
+                </div>
+            </div>
+
+            <div class="six wide column m-text-thin m-text-spaced m-opacity-mini">
+                <h4 class="ui inverted header">Banyue</h4>
+                <p class="m-text-thin m-text-spaced m-opacity-mini">这是我的个人博客，会分享关于编程、写作、思考相关的任何内容，希望可以给到这儿来的人有所帮助......</p>
+            </div>
+
+        </div>
+        <!-- 一条间隔线 -->
+        <div class="ui inverted section divider"></div>
+        <p class="m-text-thin m-text-spaced m-opacity-mini">
+            Copyright &copy; 2022 - 2023 Banyue Designed by Banyue &nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.beian.miit.gov.cn/">鄂ICP备20002533号-1</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+            举报邮箱：1831008631@qq.com
+        </p>
+    </div>
+</footer>
+</body>
+</html>

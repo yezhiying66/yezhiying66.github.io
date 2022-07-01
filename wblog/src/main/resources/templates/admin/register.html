@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" href="https://fastly.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../../static/css/me.css">
+</head>
+    <style>
+        body {
+            background-image: url("../../static/images/bj3.png")  !important;background-size: 100%;
+        }
+    </style>
+<body>
+<!-- 导航 -->
+<nav class="ui inverted attached segment m-padded-tb-mini m-shadow-small" th:replace="~{commons/fragment::topbar}">
+    <div class="ui m-container">
+        <div class="ui inverted secondary stackable menu">
+            <h2 class="ui teal header item">WBlog</h2>
+            <a href="#" class="m-item item m-mobile-hide"><i class="small home icon"></i>首页</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="small idea icon"></i>分类</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="small tags icon"></i>标签</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="small clone icon"></i>归档</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="small info icon"></i>关于我</a>
+            <div class="right m-item item m-mobile-hide">
+                <div class="ui category search">
+                    <div class="ui icon input">
+                        <input class="prompt" type="text" placeholder="Search...">
+                        <i class="search link icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" id="menu_toggle" class="ui black icon button m-right-top m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+<br><br><br><br><br><br><br><br>
+
+<div class="m-container-small m-padded-tb-massive">
+    <div class="ui positive icon message">
+        <i class="info circle letter icon"></i>
+        <div class="content">
+            <div class="header">Feedback Information</div>
+            <ul class="list">
+                <li><p style="font-size: large">此功能还未开放，请联系管理员!&nbsp;&nbsp;<i class="ui active inline loader"></i></p></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<br><br><br><br><br><br>
+<!-- 底部 -->
+<footer class="ui inverted vertical segment m-padded-tb-big" th:replace="~{commons/fragment::footerbar}">
+    <div class="ui center aligned container">
+        <div class="ui inverted divided stackable grid">
+
+            <div class="three wide column">
+                <div class="ui inverted link list">
+                    <div class="item">
+                        <img src="../../static/images/QQ.jpg" class="ui rounded image" alt="" style="width: 110px">
+                    </div>
+                </div>
+            </div>
+
+            <div class="three wide column m-text-thin m-text-spaced m-opacity-mini">
+                <h4 class="ui inverted header m-text-thin m-text-spaced">最新博客</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">用户故事 (User Story) </a>
+                    <a href="#" class="item">用户故事 (User Story) </a>
+                    <a href="#" class="item">用户故事 (User Story) </a>
+                    <a href="#" class="item">用户故事 (User Story) </a>
+                </div>
+            </div>
+
+            <div class="four wide column m-text-thin m-text-spaced m-opacity-mini">
+                <h4 class="ui inverted header m-text-thin m-text-spaced">联系我</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">Email: 3101965890@qq.com</a>
+                    <a href="#" class="item">QQ: 3101965890</a>
+                </div>
+            </div>
+
+            <div class="six wide column m-text-thin m-text-spaced m-opacity-mini">
+                <h4 class="ui inverted header">WBlog</h4>
+                <p class="m-text-thin m-text-spaced m-opacity-mini">这是我的个人博客，会分享关于编程、写作、思考相关的任何内容，希望可以给到这儿来的人有所帮助......</p>
+            </div>
+
+        </div>
+        <!-- 一条间隔线 -->
+        <div class="ui inverted section divider"></div>
+        <p class="m-text-thin m-text-spaced m-opacity-mini">Copyright &copy; 2020 - 2021 WBlog Designed by WBlog</p>
+    </div>
+</footer>
+
+<script type="text/javascript" src="https://fastly.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://fastly.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<script type="text/javascript">
+    /* 为右上角的菜单按钮在手机端时添加响应 */
+    $('#menu_toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+</script>
+</body>
+</html>

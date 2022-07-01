@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="commons/fragment::head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/me.css">
+</head>
+<style>
+    .wrap {
+        /*设置背景渐变色*/
+        background-image: linear-gradient(to right, red, orange, yellow, green, yellow, orange, red, orange,yellow, green, yellow, orange, red);
+        /*chrome私有样式，加前缀，文字显示背景图片*/
+        -webkit-background-clip: text;
+        animation: move 5s infinite;
+        /*文字颜色设为透明*/
+        color: transparent;
+
+    }
+</style>
+<body>
+
+    <!-- 播放器   -->
+    <div th:replace="~{commons/fragment::music}"></div>
+    <!-- 侧边栏 -->
+    <div th:replace="~{commons/fragment::sidebar}"></div>
+
+    <div id="pageContent">
+        <!-- 导航 -->
+        <nav class="ui attached segment m-padded-tb-mini m-shadow-small" th:replace="~{commons/fragment::topbar(activeUri='aboutme')}">
+            <div class="ui m-container">
+                <div class="ui secondary stackable menu">
+                    <h2 class="ui teal header item">WBlog</h2>
+                    <a href="#" class="m-item item m-mobile-hide"><i class="small home icon"></i>首页</a>
+                    <a href="#" class="m-item item m-mobile-hide"><i class="small idea icon"></i>分类</a>
+                    <a href="#" class="m-item item m-mobile-hide"><i class="small tags icon"></i>标签</a>
+                    <a href="#" class="m-item item m-mobile-hide"><i class="small clone icon"></i>归档</a>
+                    <a href="#" class="active m-item item m-mobile-hide"><i class="small info icon"></i>关于我</a>
+                    <div class="right m-item item m-mobile-hide">
+                        <div class="ui icon input">
+                            <input type="text" placeholder="Search...">
+                            <i class="search link icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" id="menu_toggle" class="ui black icon button m-right-top m-mobile-show">
+                <i class="sidebar icon"></i>
+            </a>
+        </nav>
+        <!-- 中间内容 -->
+        <div class="m-container m-padded-tb-big">
+            <div class="ui container" style="margin-top: 60px;">
+
+                <div class="ui stackable grid">
+                    <div class="eleven wide column animated bounceInLeft">
+                        <div class="ui purple segment slide masked reveal image">
+                            <img src="/static/images/bj2.jpg" th:src="@{/images/bj2.jpg}" alt="" class="ui visible content">
+                            <img src="https://unsplash.it/750/500" class="hidden content">
+                        </div>
+                        <div class="ui segment" style="text-align: center !important;" >
+                            <div>
+                                <p  style="
+                                /*设置背景渐变色*/
+                                background-image: linear-gradient(to right, red, orange, yellow, green, yellow, orange, red, orange,yellow, green, yellow, orange, red);
+                                /*chrome私有样式，加前缀，文字显示背景图片*/
+                                -webkit-background-clip: text;
+                                animation: move 5s infinite;
+                                /*文字颜色设为透明*/
+                                color: transparent;"
+                                >
+                                    脚踏金波垂碧野，肩扛玉殿立清虚。三山我不登头榜，试问谁人敢自居？
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="five wide column animated bounceInRight" id="nice">
+                        <div class="ui top attached segment">
+                            <div class="ui header">关于我&nbsp;&nbsp;<i class="cn flag"></i></div>
+                        </div>
+                        <div class="ui attached stackable segment">
+                            <p class="m-text">Banyue，一个独立开发者，折腾在0和1世界的菜鸟；一个终生学习者，誓将学习无限循环，希望结识可以共同成长的小伙伴</p>
+                            <p class="m-text">写Bug、打游戏、看动漫、不喜约束、比较自私、偶尔emo......</p>
+                        </div>
+                        <div class="ui attached segment">
+                            <a class="ui black label m-margin-top-tiny">编程</a>
+                            <a class="ui blue label m-margin-top-tiny">思考</a>
+                            <a class="ui orange label m-margin-top-tiny">运动</a>
+                            <a class="ui green label m-margin-top-tiny">写作</a>
+                            <a class="ui purple label m-margin-top-tiny">音乐</a>
+                        </div>
+                        <div class="ui attached segment">
+                            <a class="ui teal tag label small m-margin-top-tiny">JAVA</a>
+                            <a class="ui teal tag label small m-margin-top-tiny">JavaScript</a>
+                            <a class="ui teal tag label small m-margin-top-tiny">Photoshop</a>
+                            <a class="ui teal tag label small m-margin-top-tiny">HTML</a>
+                            <a class="ui teal tag label small m-margin-top-tiny">Jsp+Servlet</a>
+                            <a class="ui teal tag label small m-margin-top-tiny">C/C++</a>
+                            <a class="ui teal tag label small m-margin-top-tiny">MySQL</a>
+                            <a class="ui teal tag label small m-margin-top-tiny">SpringBoot</a>
+                            <a class="ui teal tag label small m-margin-top-tiny">Linux</a>
+
+                        </div>
+                        <div class="ui bottom attached segment" id="hhhh">
+                            <a class="ui circular icon button"><i class="github icon"></i></a>
+                            <a class="ui wechat circular icon button"><i class="weixin icon"></i></a>
+                            <a class="ui qq circular icon button" data-content="1831008631" data-position="bottom center"><i class="qq icon"></i></a>
+                        </div>
+                        <div class="ui wechat-qr flowing popup transition hidden">
+                            <img src="/static/images/WeChat.png" alt=""  class="ui rounded image" style="width: 100px;">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <footer class="ui inverted vertical segment m-padded-tb-big" th:replace="~{commons/fragment::footerbar}">
+        <div class="ui center aligned container">
+            <div class="ui inverted divided stackable grid">
+
+                <div class="three wide column">
+                    <div class="ui inverted link list">
+                        <div class="item">
+                            <img src="../static/images/QQ.jpg" class="ui rounded image" alt="" style="width: 110px">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="three wide column m-text-thin m-text-spaced m-opacity-mini">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced">最新博客</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">用户故事 (User Story) </a>
+                        <a href="#" class="item">用户故事 (User Story) </a>
+                        <a href="#" class="item">用户故事 (User Story) </a>
+                        <a href="#" class="item">用户故事 (User Story) </a>
+                    </div>
+                </div>
+
+                <div class="four wide column m-text-thin m-text-spaced m-opacity-mini">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced">联系我</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">Email: 3101965890@qq.com</a>
+                        <a href="#" class="item">QQ: 3101965890</a>
+                    </div>
+                </div>
+
+                <div class="six wide column m-text-thin m-text-spaced m-opacity-mini">
+                    <h4 class="ui inverted header">WBlog</h4>
+                    <p class="m-text-thin m-text-spaced m-opacity-mini">这是我的个人博客，会分享关于编程、写作、思考相关的任何内容，希望可以给到这儿来的人有所帮助......</p>
+                </div>
+
+            </div>
+            <!-- 一条间隔线 -->
+            <div class="ui inverted section divider"></div>
+            <p class="m-text-thin m-text-spaced m-opacity-mini">Copyright &copy; 2020 - 2021 WBlog Designed by WBlog</p>
+        </div>
+    </footer>
+
+<!--/*/<th:block th:replace="~{commons/fragment::script}">/*/-->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+<!--/*/</th:block>/*/-->
+
+<script type="text/javascript">
+    $(document).pjax('a[target!=_blank]', '#pageContent', {fragment: '#pageContent'});
+
+    /* 为右上角的菜单按钮在手机端时添加响应 */
+    $('#menu_toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    /* 弹出微信二维码 */
+    $('.wechat').popup({
+        popup : $('.wechat-qr'),
+        position : 'top center'
+    });
+
+    $('#qq').popup();
+
+    /* 侧边栏 */
+    $('.left.sidebar').first().sidebar('attach events', '.toggle.button');
+    $('.toggle.button').removeClass('disabled');
+
+    /* music */
+    $('#music-btn').click(function () {
+        $(' .m-muic').toggleClass('m-star');
+    });
+
+    /* 调整光线 */
+    var brightness;
+    //显示遮罩
+    function cover(brightness) {
+        if (typeof(div) == 'undefined') {
+            div = document.createElement('div');
+            div.setAttribute('style', 'position:fixed;top:0;left:0;outline:5000px solid;z-index:99999;');
+            document.body.appendChild(div);
+        } else {
+            div.style.display = '';
+        }
+        div.style.outlineColor = 'rgba(0,0,0,' + brightness + ')';
+    }
+    //事件监听
+    function openNightMode() {
+        cover(brightness = 0.3);
+    }
+    function closeNightMode() {
+        cover(brightness = 0);
+    }
+    function tunUP() {
+        if (brightness - 0.05 > 0.05) cover(brightness -= 0.05);
+    }
+    function tunDown() {
+        if (brightness + 0.05 < 0.95) cover(brightness += 0.05);
+    }
+    // 快捷键
+    window.addEventListener('keydown', function(e) {
+        if (e.altKey && e.keyCode == 90) { //Alt+Z:打开夜间模式
+            cover(brightness = 0.3);
+        }
+        if (e.altKey && e.keyCode == 88) { //Alt+X:关闭
+            cover(brightness = 0);
+        }
+        if (e.altKey && e.keyCode == 38) { //Alt+↑:增加亮度
+            if (brightness - 0.05 > 0.05) cover(brightness -= 0.05);
+        }
+        if (e.altKey && e.keyCode == 40) { //Alt+↓:降低亮度
+            if (brightness + 0.05 < 0.95) cover(brightness += 0.05);
+        }
+    }, false);
+
+    /* 播放音乐 */
+    function playMusic() {
+        var audio = document.getElementById('music');
+        if(audio.paused){
+            audio.play();//audio.play();// 播放
+            $('#music-icon').attr("class", "pause icon");
+        } else {
+            audio.pause();
+            $('#music-icon').attr("class", "play icon");
+        }
+    };
+
+    $('.qq').popup({});
+    $('.wechat').popup({
+        popup:$('.wechat-qr'),
+        position:'bottom center'
+    })
+</script>
+</body>
+</html>

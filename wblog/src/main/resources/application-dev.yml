@@ -1,0 +1,27 @@
+## 开发环境配置文件
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog2?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+  thymeleaf:
+    cache: false
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/static/
+
+logging:
+  level:
+    root: info
+    com.wb: debug
+  file: log/blog-dev.log
+
+server:
+  port: 80

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="commons/fragment::head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>标签</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/me.css">
+</head>
+<body>
+
+    <!-- 播放器   -->
+    <div th:replace="~{commons/fragment::music}"></div>
+    <!-- 侧边栏 -->
+    <div th:replace="~{commons/fragment::sidebar}"></div>
+
+    <div id="pageContent">
+        <!-- 导航 -->
+        <nav class="ui inverted attached segment m-padded-tb-mini m-shadow-small" th:replace="~{commons/fragment::topbar(activeUri='tag')}">
+            <div class="ui m-container">
+                <div class="ui inverted secondary stackable menu">
+                    <h2 class="ui teal header item">WBlog</h2>
+                    <a href="#" class="m-item item m-mobile-hide"><i class="small home icon"></i>首页</a>
+                    <a href="#" class="m-item item m-mobile-hide"><i class="small idea icon"></i>分类</a>
+                    <a href="#" class="active m-item item m-mobile-hide"><i class="small tags icon"></i>标签</a>
+                    <a href="#" class="m-item item m-mobile-hide"><i class="small clone icon"></i>归档</a>
+                    <a href="#" class="m-item item m-mobile-hide"><i class="small info icon"></i>关于我</a>
+                    <div class="right m-item item m-mobile-hide">
+                        <div class="ui icon input">
+                            <input type="text" placeholder="Search...">
+                            <i class="search link icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" id="menu_toggle" class="ui black icon button m-right-top m-mobile-show">
+                <i class="sidebar icon"></i>
+            </a>
+        </nav>
+        <!-- 中间内容 -->
+        <div class="m-container-small m-padded-tb-big animated fadeInDown">
+            <div class="ui container" style="margin-top: 60px;">
+                <!-- header -->
+                <div class="ui top attached segment">
+                    <div class="ui middle aligned two column grid">
+                        <div class="column">
+                            <h3 class="ui teal header">标签</h3>
+                        </div>
+                        <div class="right aligned column">
+                            共 <h3 class="ui orange header m-inline-block" th:text="${#arrays.length(tags)}">14</h3> 个
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ui attached segment m-padded-tb-large">
+                    <a href="#" th:href="@{/tags/{id}(id=${tag.id})}" th:each="tag:${tags}"
+                       th:classappend="${tag.id==activeTagId} ? 'teal'" class="ui tag large label m-margin-top-tiny">
+                        <span th:text="${tag.name}">JAVA</span>
+                        <div class="detail" th:text="${#arrays.length(tag.blogs)}">34</div>
+                    </a>
+                </div>
+
+                <div class="ui top attached teal segment">
+                    <div class="ui padded vertical segment m-padded-tb-big" th:each="blog:${page.content}">
+                        <div class="ui middle aligned mobile reversed stackable grid">
+                            <div class="eleven wide column">
+                                <h3 class="ui header">
+                                    <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black"
+                                       th:text="${blog.title}">你真的理解什么是财富自由吗？
+                                    </a>
+                                </h3>
+                                <p class="m-text" th:text="|${blog.description}......|">加解决方法架飞机爱妃家居服极爱附加阿胶方法减肥就爱犯贱啊诶发姐减肥啊额</p>
+                                <span>......</span>
+                                <div class="ui grid">
+                                    <div class="row">
+                                        <div class="eleven wide column">
+                                            <div class="ui mini horizontal link list">
+                                                <div class="item">
+                                                    <img src="https://unsplash.it/100/100?image=1005" th:src="@{${blog.user.avatar}}" alt="" class="ui avatar image">
+                                                    <div class="content"><a class="header" th:text="${blog.user.nickname}">张三丰</a></div>
+                                                </div>
+                                                <div class="item">
+                                                    <i class="calendar icon"></i><span th:text="${#dates.format(blog.updateTime, 'yyyy-MM-dd')}">2019-02-25</span>
+                                                </div>
+                                                <div class="item">
+                                                    <i class="eye icon"></i><span th:text="${blog.views}">334</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="right aligned five wide column">
+                                            <a class="ui teal basic label m-padded-mini m-text-thin" th:text="${blog.type.name}">认知升级</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="column">
+                                            <a href="#" th:href="@{/blog/{id}(id=${tagname.id})}" class="ui tag mini label m-margin-top-tiny m-text-thin"
+                                               th:each="tagname:${blog.tags}" th:classappend="${tagname.id==activeTagId} ? 'teal'" th:text="${tagname.name}">JAVA</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="five wide column">
+                                <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">
+                                    <img src="http://unsplash.it/800/450?image=1005" th:src="@{${blog.firstPicture}}" alt="" class="ui rounded image">
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- footer -->
+                <div class="ui bottom attached segment">
+                    <div class="ui middle aligned two column grid" th:if="${page.totalPages}>1">
+                        <div class="column">
+                            <a href="#" th:href="@{/tags/(page=${page.number}-1)}" th:unless="${page.first}" class="ui mini teal basic button">上一页</a>
+                        </div>
+                        <div class="right aligned column">
+                            <a href="#" th:href="@{/tags/(page=${page.number}+1)}" th:unless="${page.last}" class="ui mini teal basic button">下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <br>
+            <br>
+            <br>
+
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <footer class="ui inverted vertical segment m-padded-tb-big" th:replace="~{commons/fragment::footerbar}">
+        <div class="ui center aligned container">
+            <div class="ui inverted divided stackable grid">
+
+                <div class="three wide column">
+                    <div class="ui inverted link list">
+                        <div class="item">
+                            <img src="../static/images/QQ.jpg" class="ui rounded image" th:src="@{images/QQ.jpg}" alt="" style="width: 110px">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="three wide column m-text-thin m-text-spaced m-opacity-mini">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced">最新博客</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">用户故事 (User Story) </a>
+                        <a href="#" class="item">用户故事 (User Story) </a>
+                        <a href="#" class="item">用户故事 (User Story) </a>
+                        <a href="#" class="item">用户故事 (User Story) </a>
+                    </div>
+                </div>
+
+                <div class="four wide column m-text-thin m-text-spaced m-opacity-mini">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced">联系我</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">Email: 3101965890@qq.com</a>
+                        <a href="#" class="item">QQ: 3101965890</a>
+                    </div>
+                </div>
+
+                <div class="six wide column m-text-thin m-text-spaced m-opacity-mini">
+                    <h4 class="ui inverted header">WBlog</h4>
+                    <p class="m-text-thin m-text-spaced m-opacity-mini">这是我的个人博客，会分享关于编程、写作、思考相关的任何内容，希望可以给到这儿来的人有所帮助......</p>
+                </div>
+
+            </div>
+            <!-- 一条间隔线 -->
+            <div class="ui inverted section divider"></div>
+            <p class="m-text-thin m-text-spaced m-opacity-mini">Copyright &copy; 2020 - 2021 WBlog Designed by WBlog</p>
+        </div>
+    </footer>
+
+<!--/*/<th:block th:replace="~{commons/fragment::script}">/*/-->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+<!--/*/</th:block>/*/-->
+
+<script type="text/javascript">
+    $(document).pjax('a[target!=_blank]', '#pageContent', {fragment: '#pageContent'});
+    /* 为右上角的菜单按钮在手机端时添加响应 */
+    $('#menu_toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    /* 侧边栏 */
+    $('.left.sidebar').first().sidebar('attach events', '.toggle.button');
+    $('.toggle.button').removeClass('disabled');
+
+    /* music */
+    $('#music-btn').click(function () {
+        $(' .m-muic').toggleClass('m-star');
+    });
+
+    /* 调整光线 */
+    var brightness;
+    //显示遮罩
+    function cover(brightness) {
+        if (typeof(div) == 'undefined') {
+            div = document.createElement('div');
+            div.setAttribute('style', 'position:fixed;top:0;left:0;outline:5000px solid;z-index:99999;');
+            document.body.appendChild(div);
+        } else {
+            div.style.display = '';
+        }
+        div.style.outlineColor = 'rgba(0,0,0,' + brightness + ')';
+    }
+    //事件监听
+    function openNightMode() {
+        cover(brightness = 0.3);
+    }
+    function closeNightMode() {
+        cover(brightness = 0);
+    }
+    function tunUP() {
+        if (brightness - 0.05 > 0.05) cover(brightness -= 0.05);
+    }
+    function tunDown() {
+        if (brightness + 0.05 < 0.95) cover(brightness += 0.05);
+    }
+    // 快捷键
+    window.addEventListener('keydown', function(e) {
+        if (e.altKey && e.keyCode == 90) { //Alt+Z:打开夜间模式
+            cover(brightness = 0.3);
+        }
+        if (e.altKey && e.keyCode == 88) { //Alt+X:关闭
+            cover(brightness = 0);
+        }
+        if (e.altKey && e.keyCode == 38) { //Alt+↑:增加亮度
+            if (brightness - 0.05 > 0.05) cover(brightness -= 0.05);
+        }
+        if (e.altKey && e.keyCode == 40) { //Alt+↓:降低亮度
+            if (brightness + 0.05 < 0.95) cover(brightness += 0.05);
+        }
+    }, false);
+
+    /* 播放音乐 */
+    function playMusic() {
+        var audio = document.getElementById('music');
+        if(audio.paused){
+            audio.play();//audio.play();// 播放
+            $('#music-icon').attr("class", "pause icon");
+        } else {
+            audio.pause();
+            $('#music-icon').attr("class", "play icon");
+        }
+    }
+</script>
+</body>
+</html>

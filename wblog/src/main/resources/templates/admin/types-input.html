@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分类新增</title>
+    <link rel="stylesheet" href="https://fastly.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../../static/css/me.css" th:href="@{/css/me.css}">
+    <!-- Markdown 编辑器 css -->
+    <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.min.css" th:href="@{/lib/editormd/css/editormd.min.css}">
+</head>
+    <style>
+        body {
+            background-image: url("../../static/images/bj3.png")  !important;background-size: 100%;
+        }
+    </style>
+<body>
+
+    <!-- 导航 -->
+    <nav class="ui inverted attached segment m-padded-tb-mini m-shadow-small" th:replace="~{commons/fragment-admin::topbar(activeUri='type')}">
+        <div class="ui m-container">
+            <div class="ui inverted secondary stackable menu">
+                <h2 class="ui teal header item">后台管理</h2>
+                <a href="#" class="m-item item m-mobile-hide"><i class="small home icon"></i>博客</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="small idea icon"></i>分类</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="small tags icon"></i>标签</a>
+                <div class="right m-item m-mobile-hide menu">
+                    <div class="ui dropdown item">
+                        <img class="ui avatar image" src="https://unsplash.it/100/100?image=1005">张三丰
+                        <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <a href="#" class="item">注销</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" id="menu_toggle" class="ui black icon button m-right-top m-mobile-show">
+            <i class="sidebar icon"></i>
+        </a>
+    </nav>
+    <!-- 二级导航 -->
+    <div class="ui attached pointing menu">
+        <div class="ui container">
+            <a href="#" th:href="@{/admin/types/input}" class="teal active item">新增</a>
+            <a href="#" th:href="@{/admin/types}" class="teal item">列表</a>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!-- 中间内容 -->
+    <div class="m-container-small m-padded-tb-big">
+        <div class="ui container">
+            <!-- *{id}==null ? @{/admin/types} : @{/admin/types/{id}(id=*{id})} : 如果 type里面的*{id}为空，则调用新增分类的方法，否则调用修改分类的方法 -->
+            <form action="#" class="ui form" method="post"
+                  th:object="${type}" th:action="*{id}==null ? @{/admin/addTypes} : @{/admin/addTypes/{id}(id=*{id})}">
+                <input type="hidden" th:value="*{id}">
+                <div class=" field">
+                    <div class="ui left labeled input">
+                        <label class="ui teal basic label">名称</label>
+                        <input type="text" name="name" placeholder="分类名称" th:value="*{name}" >
+                    </div>
+                </div>
+
+                <!-- 错误消息 -->
+                <div class="ui error message"></div>
+                <!--/*/
+                <div class="ui negative message" th:if="${#fields.hasErrors('name')}"  >
+                  <i class="close icon"></i>
+                  <div class="header">验证失败</div>
+                  <p th:errors="*{name}">提交的信息不符合规则</p>
+                </div>
+                 /*/-->
+
+                <div class="ui right aligned container">
+                    <button type="button" class="ui button" onclick="window.history.go(-1)">返回</button>
+                    <button class="ui teal submit button">提交</button>
+                </div>
+            </form>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+    </div>
+
+    <!-- 底部 -->
+    <footer class="ui inverted vertical segment m-padded-tb-big" th:replace="~{commons/fragment-admin::footerbar}">
+        <div class="ui center aligned container">
+            <div class="ui inverted divided stackable grid">
+
+                <div class="three wide column">
+                    <div class="ui inverted link list">
+                        <div class="item">
+                            <img src="../../static/images/QQ.jpg" class="ui rounded image" alt="" style="width: 110px">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="three wide column m-text-thin m-text-spaced m-opacity-mini">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced">最新博客</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">用户故事 (User Story) </a>
+                        <a href="#" class="item">用户故事 (User Story) </a>
+                        <a href="#" class="item">用户故事 (User Story) </a>
+                        <a href="#" class="item">用户故事 (User Story) </a>
+                    </div>
+                </div>
+
+                <div class="four wide column m-text-thin m-text-spaced m-opacity-mini">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced">联系我</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">Email: 3101965890@qq.com</a>
+                        <a href="#" class="item">QQ: 3101965890</a>
+                    </div>
+                </div>
+
+                <div class="six wide column m-text-thin m-text-spaced m-opacity-mini">
+                    <h4 class="ui inverted header">WBlog</h4>
+                    <p class="m-text-thin m-text-spaced m-opacity-mini">这是我的个人博客，会分享关于编程、写作、思考相关的任何内容，希望可以给到这儿来的人有所帮助......</p>
+                </div>
+
+            </div>
+            <!-- 一条间隔线 -->
+            <div class="ui inverted section divider"></div>
+            <p class="m-text-thin m-text-spaced m-opacity-mini">Copyright &copy; 2020 - 2021 WBlog Designed by WBlog</p>
+        </div>
+    </footer>
+
+<script type="text/javascript" src="https://fastly.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://fastly.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<script type="text/javascript">
+    /* 为右上角的菜单按钮在手机端时添加响应 */
+    $('#menu_toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $('.ui.dropdown').dropdown();
+
+    /* 表单验证 */
+    $('.ui.form').form({
+       fields : {
+           title : {
+               identifier : 'name',
+               rules : [{
+                   type : 'empty',
+                   prompt : '请输入分类名称'
+               }]
+           }
+       }
+    });
+</script>
+</body>
+</html>

